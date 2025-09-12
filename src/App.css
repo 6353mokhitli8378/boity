@@ -1,0 +1,226 @@
+/* App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-nav {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-menu button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-menu button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-menu button:hover::before {
+  left: 100%;
+}
+
+.nav-menu button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu button.active {
+  background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+  transform: translateY(-2px);
+}
+
+.nav-menu button.active:hover {
+  background: linear-gradient(135deg, #e67e22 0%, #c0392b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(231, 76, 60, 0.5);
+}
+
+.nav-menu button:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8f9fa;
+}
+
+/* Loading spinner for Suspense fallback */
+.main-content > .Suspense > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 6px;
+  }
+  
+  .nav-menu button {
+    padding: 10px 16px;
+    min-width: 120px;
+    font-size: 13px;
+  }
+  
+  .top-nav h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 1rem;
+  }
+  
+  .top-nav h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .nav-menu {
+    gap: 4px;
+  }
+  
+  .nav-menu button {
+    padding: 8px 12px;
+    min-width: 100px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+  
+  .main-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav h1 {
+    font-size: 1.3rem;
+  }
+  
+  .nav-menu {
+    justify-content: space-around;
+    gap: 4px;
+  }
+  
+  .nav-menu button {
+    min-width: auto;
+    padding: 8px 10px;
+    font-size: 11px;
+    flex: 1;
+    max-width: 100px;
+  }
+  
+  .nav-menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    justify-content: flex-start;
+  }
+  
+  .nav-menu::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .nav-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .nav-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+}
+
+/* Animation for page transitions */
+.main-content > .Suspense {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus states for accessibility */
+.nav-menu button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Disabled state (if ever needed) */
+.nav-menu button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.nav-menu button:disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}

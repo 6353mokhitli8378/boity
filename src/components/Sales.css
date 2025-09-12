@@ -1,0 +1,243 @@
+/* Sales Component Styles */
+.page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.sales-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.sales-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sales-form h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.sales-form h4 {
+  color: #34495e;
+  margin: 25px 0 15px 0;
+  font-size: 1.2rem;
+}
+
+.sale-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.sale-item select,
+.sale-item input {
+  padding: 8px;
+  border: 2px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.sale-item input {
+  width: 80px;
+}
+
+.sale-item button {
+  padding: 8px 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.sale-item button:hover {
+  background: #c0392b;
+}
+
+.sales-form button[type="button"] {
+  background: #95a5a6;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.sales-form button[type="button"]:hover {
+  background: #7f8c8d;
+}
+
+.total {
+  text-align: right;
+  margin: 20px 0;
+  padding: 15px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.total strong {
+  color: #27ae60;
+}
+
+.sales-form button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sales-form button[type="submit"]:hover {
+  background: #229954;
+}
+
+.sales-history {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.sales-history h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.sales-history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.sales-history th {
+  background: #34495e;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.sales-history td {
+  padding: 12px;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.sales-history tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.sales-history tr:hover {
+  background: #ecf0f1;
+}
+
+.sales-history p {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sales-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .sale-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .sale-item button {
+    width: 100%;
+  }
+  
+  .page {
+    padding: 10px;
+  }
+  
+  .sales-form,
+  .sales-history {
+    padding: 15px;
+  }
+}
+
+/* Scrollbar styling for sales history */
+.sales-history::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sales-history::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.sales-history::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+.sales-history::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
