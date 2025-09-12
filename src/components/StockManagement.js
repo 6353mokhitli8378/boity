@@ -12,7 +12,7 @@ const StockManagement = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('/api/products');
+      const response = await fetch('https://backend-054e.onrender.com/api/products');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -22,7 +22,7 @@ const StockManagement = () => {
 
   const updateStock = async (productId, quantityChange) => {
     try {
-      const response = await fetch(`/api/products/${productId}/stock`, {
+      const response = await fetch(`https://backend-054e.onrender.com/api/products/${productId}/stock`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ const Product = ({ productId }) => {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`/api/products/${productId}`);
+      const response = await fetch(`https://backend-054e.onrender.com/api/products/${productId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch product');
       }

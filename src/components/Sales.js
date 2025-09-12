@@ -14,7 +14,7 @@ const Sales = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const API_BASE = "http://localhost:5000/api";
+  const API_BASE = "https://backend-054e.onrender.com/api";
 
   // Fetch data on component mount
   useEffect(() => {

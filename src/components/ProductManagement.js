@@ -12,7 +12,7 @@ const ProductManagement = () => {
     quantity: ''
   });
 
-  const API_BASE = "http://localhost:5000/api/products";
+  const API_BASE = "https://backend-054e.onrender.com/api/products";
 
   useEffect(() => {
     fetchProducts();
