@@ -16,11 +16,11 @@ const Dashboard = ({ setCurrentPage }) => {
   const fetchStats = async () => {
     try {
       // Fetch products data
-      const productsResponse = await fetch('/api/products');
+      const productsResponse = await fetch('https://backend-054e.onrender.com/api/products');
       const products = await productsResponse.json();
       
       // Fetch sales data
-      const salesResponse = await fetch('/api/sales');
+      const salesResponse = await fetch('https://backend-054e.onrender.com/api/sales');
       const sales = await salesResponse.json();
       
       // Calculate total inventory value
